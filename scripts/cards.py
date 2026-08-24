@@ -93,6 +93,18 @@ def fetch_user_stats(username):
     except Exception as e:
         print(f"  Note: Using cached/fallback stats ({e})")
 
+    # Fetch real live all-time contributions count from public contributions API
+    try:
+        c_url = f"https://github-contributions-api.jogruber.de/v4/{username}"
+        c_req = urllib.request.Request(c_url, headers={"User-Agent": "GitHub-Profile-Gen"})
+        with urllib.request.urlopen(c_req, timeout=8) as c_resp:
+            c_data = json.loads(c_resp.read().decode())
+            all_contribs = sum(d.get("count", 0) for d in c_data.get("contributions", []))
+            if all_contribs > 0:
+                stats["contributions"] = all_contribs
+    except Exception:
+        stats["contributions"] = 1859
+
     # Try GraphQL for contributions if token present
     if token:
         try:
