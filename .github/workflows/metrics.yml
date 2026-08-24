@@ -1,0 +1,70 @@
+name: Metrics
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"    # every 6 hours
+  workflow_dispatch:          # manual trigger
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      # ── 3D isometric contribution calendar ──
+      - name: Isometric Calendar (full year)
+        uses: lowlighter/metrics@latest
+        with:
+          filename: assets/metrics.isometric-dark.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: krushnasaruk
+          base: ""
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          config_timezone: Asia/Kolkata
+          config_display: large
+          config_output: svg
+
+      - name: Isometric Calendar (full year, light)
+        uses: lowlighter/metrics@latest
+        with:
+          filename: assets/metrics.isometric-light.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: krushnasaruk
+          base: ""
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          config_timezone: Asia/Kolkata
+          config_display: large
+          config_output: svg
+
+      # ── Language distribution ──
+      - name: Languages
+        uses: lowlighter/metrics@latest
+        with:
+          filename: assets/metrics.languages.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: krushnasaruk
+          base: ""
+          plugin_languages: yes
+          plugin_languages_details: percentage
+          plugin_languages_threshold: 2%
+          plugin_languages_limit: 8
+          plugin_languages_ignored: html, css, shell, makefile, dockerfile
+          config_timezone: Asia/Kolkata
+          config_output: svg
+
+      # ── Achievement badges ──
+      - name: Achievements
+        uses: lowlighter/metrics@latest
+        with:
+          filename: assets/metrics.achievements.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: krushnasaruk
+          base: ""
+          plugin_achievements: yes
+          plugin_achievements_threshold: C
+          plugin_achievements_secrets: yes
+          plugin_achievements_display: compact
+          config_timezone: Asia/Kolkata
+          config_output: svg

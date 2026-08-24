@@ -1,0 +1,20 @@
+{
+  "projects": [
+    {
+      "repo": "project-one",
+      "description": "Replace with your first project — write it like a one-line pitch, not a commit message."
+    },
+    {
+      "repo": "project-two",
+      "description": "Replace with your second project — what does it do and why should someone care?"
+    },
+    {
+      "repo": "project-three",
+      "description": "Replace with your third project — make it sound like something you'd demo, not something you'd push."
+    },
+    {
+      "repo": "project-four",
+      "description": "Replace with your fourth project — four is the limit, and having to choose is the useful part."
+    }
+  ]
+}
