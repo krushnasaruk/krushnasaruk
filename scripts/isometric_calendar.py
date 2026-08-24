@@ -149,7 +149,7 @@ def render_3d_isometric_svg(weeks, total_365, all_time, theme="dark", accent="#3
 
     # Header section: Title + Live counts
     lines.append(f'<text x="18" y="24" class="iso-title">~/ 3D Contribution Terrain <tspan class="iso-sub">(365-Day Live Matrix)</tspan></text>')
-    lines.append(f'<text x="18" y="40" class="iso-sub">Recent 365 Days: <tspan class="iso-val">{total_365}</tspan> &nbsp;|&nbsp; All-Time Contributions: <tspan class="iso-val">{all_time:,}</tspan></text>')
+    lines.append(f'<text x="18" y="40" class="iso-sub">Recent 365 Days: <tspan class="iso-val">{total_365}</tspan>   |   All-Time Contributions: <tspan class="iso-val">{all_time:,}</tspan></text>')
 
     # Legend placed safely in TOP-RIGHT corner (never overlaps voxels!)
     leg_x = width - 160
