@@ -1,52 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 340" width="440" height="340">
 <defs>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&amp;display=swap');
-  text { font-family: "JetBrains Mono", "Fira Code", monospace; }
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;display=swap');
+  .r-title { font-family: "JetBrains Mono", monospace; font-size: 13px; font-weight: 700; fill: #f0f6fc; }
+  .r-label { font-family: "JetBrains Mono", monospace; font-size: 10px; font-weight: 500; fill: #8b949e; }
+  .r-val { font-family: "JetBrains Mono", monospace; font-size: 9px; font-weight: 700; fill: #39D353; }
+  
+  @keyframes radarPulse {
+    0%, 100% { fill-opacity: 0.22; }
+    50% { fill-opacity: 0.35; }
+  }
+  .radar-poly { animation: radarPulse 3s ease-in-out infinite; }
 </style>
 </defs>
-<text x="200.0" y="22" text-anchor="middle" fill="#e6e6e6" font-size="13" font-weight="600">Skill Radar</text>
-<polygon points="200.0,186.5 216.8,194.6 221.0,212.8 209.3,227.4 190.7,227.4 179.0,212.8 183.2,194.6" fill="none" stroke="#333333" stroke-width="0.5"/>
-<polygon points="200.0,165.0 233.6,181.2 241.9,217.6 218.7,246.7 181.3,246.7 158.1,217.6 166.4,181.2" fill="none" stroke="#333333" stroke-width="0.5"/>
-<polygon points="200.0,143.5 250.4,167.8 262.9,222.4 228.0,266.1 172.0,266.1 137.1,222.4 149.6,167.8" fill="none" stroke="#333333" stroke-width="0.5"/>
-<polygon points="200.0,122.0 267.3,154.4 283.9,227.1 237.3,285.5 162.7,285.5 116.1,227.1 132.7,154.4" fill="none" stroke="#333333" stroke-width="0.5"/>
-<polygon points="200.0,100.5 284.1,141.0 304.8,231.9 246.7,304.9 153.3,304.9 95.2,231.9 115.9,141.0" fill="none" stroke="#333333" stroke-width="0.5"/>
-<line x1="200.0" y1="208.0" x2="200.0" y2="100.5" stroke="#333333" stroke-width="0.5"/>
-<line x1="200.0" y1="208.0" x2="284.1" y2="141.0" stroke="#333333" stroke-width="0.5"/>
-<line x1="200.0" y1="208.0" x2="304.8" y2="231.9" stroke="#333333" stroke-width="0.5"/>
-<line x1="200.0" y1="208.0" x2="246.7" y2="304.9" stroke="#333333" stroke-width="0.5"/>
-<line x1="200.0" y1="208.0" x2="153.3" y2="304.9" stroke="#333333" stroke-width="0.5"/>
-<line x1="200.0" y1="208.0" x2="95.2" y2="231.9" stroke="#333333" stroke-width="0.5"/>
-<line x1="200.0" y1="208.0" x2="115.9" y2="141.0" stroke="#333333" stroke-width="0.5"/>
-<polygon points="200.0,116.6 265.6,155.7 286.0,227.6 235.0,280.7 162.7,285.5 126.6,224.7 136.1,157.1" fill="#39D353" fill-opacity="0.25" stroke="#39D353" stroke-width="2">
-  <animate attributeName="fill-opacity" values="0;0.25" dur="0.8s" fill="freeze"/>
-</polygon>
-<circle cx="200.0" cy="116.6" r="3.5" fill="#39D353" opacity="0.9">
-  <animate attributeName="r" values="0;3.5" dur="0.5s" begin="0.00s" fill="freeze"/>
-</circle>
-<circle cx="265.6" cy="155.7" r="3.5" fill="#39D353" opacity="0.9">
-  <animate attributeName="r" values="0;3.5" dur="0.5s" begin="0.05s" fill="freeze"/>
-</circle>
-<circle cx="286.0" cy="227.6" r="3.5" fill="#39D353" opacity="0.9">
-  <animate attributeName="r" values="0;3.5" dur="0.5s" begin="0.10s" fill="freeze"/>
-</circle>
-<circle cx="235.0" cy="280.7" r="3.5" fill="#39D353" opacity="0.9">
-  <animate attributeName="r" values="0;3.5" dur="0.5s" begin="0.15s" fill="freeze"/>
-</circle>
-<circle cx="162.7" cy="285.5" r="3.5" fill="#39D353" opacity="0.9">
-  <animate attributeName="r" values="0;3.5" dur="0.5s" begin="0.20s" fill="freeze"/>
-</circle>
-<circle cx="126.6" cy="224.7" r="3.5" fill="#39D353" opacity="0.9">
-  <animate attributeName="r" values="0;3.5" dur="0.5s" begin="0.25s" fill="freeze"/>
-</circle>
-<circle cx="136.1" cy="157.1" r="3.5" fill="#39D353" opacity="0.9">
-  <animate attributeName="r" values="0;3.5" dur="0.5s" begin="0.30s" fill="freeze"/>
-</circle>
-<text x="200.0" y="72.5" text-anchor="middle" fill="#cccccc" font-size="10">JavaScript</text>
-<text x="305.3" y="121.2" text-anchor="start" fill="#cccccc" font-size="10">TypeScript</text>
-<text x="330.3" y="240.8" text-anchor="start" fill="#cccccc" font-size="10">React</text>
-<text x="260.2" y="338.7" text-anchor="start" fill="#cccccc" font-size="10">Next.js</text>
-<text x="139.8" y="338.7" text-anchor="end" fill="#cccccc" font-size="10">Node.js</text>
-<text x="69.7" y="240.8" text-anchor="end" fill="#cccccc" font-size="10">HTML / CSS</text>
-<text x="94.7" y="121.2" text-anchor="end" fill="#cccccc" font-size="10">Git</text>
+<text x="220.0" y="24" text-anchor="middle" class="r-title">~/ Skills Matrix</text>
+<polygon points="220.0,158.2 237.0,166.4 241.2,184.8 229.4,199.6 210.6,199.6 198.8,184.8 203.0,166.4" fill="none" stroke="#21262d" stroke-width="1"/>
+<polygon points="220.0,136.5 254.0,152.9 262.4,189.7 238.9,219.2 201.1,219.2 177.6,189.7 186.0,152.9" fill="none" stroke="#21262d" stroke-width="1"/>
+<polygon points="220.0,114.7 271.0,139.3 283.6,194.5 248.3,238.8 191.7,238.8 156.4,194.5 169.0,139.3" fill="none" stroke="#21262d" stroke-width="1"/>
+<polygon points="220.0,93.0 288.1,125.7 304.9,199.4 257.8,258.4 182.2,258.4 135.1,199.4 151.9,125.7" fill="none" stroke="#21262d" stroke-width="1"/>
+<polygon points="220.0,71.2 305.1,112.2 326.1,204.2 267.2,278.0 172.8,278.0 113.9,204.2 134.9,112.2" fill="none" stroke="#21262d" stroke-width="1"/>
+<line x1="220.0" y1="180.0" x2="220.0" y2="71.2" stroke="#30363d" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="220.0" y1="180.0" x2="305.1" y2="112.2" stroke="#30363d" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="220.0" y1="180.0" x2="326.1" y2="204.2" stroke="#30363d" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="220.0" y1="180.0" x2="267.2" y2="278.0" stroke="#30363d" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="220.0" y1="180.0" x2="172.8" y2="278.0" stroke="#30363d" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="220.0" y1="180.0" x2="113.9" y2="204.2" stroke="#30363d" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="220.0" y1="180.0" x2="134.9" y2="112.2" stroke="#30363d" stroke-width="1" stroke-dasharray="2 3"/>
+<polygon points="220.0,87.5 286.3,127.1 307.0,199.9 255.4,253.5 182.2,258.4 145.7,196.9 155.4,128.4" fill="#39D353" stroke="#39D353" stroke-width="2" class="radar-poly"/>
+<circle cx="220.0" cy="87.5" r="3.5" fill="#39D353" stroke="#0d1117" stroke-width="1.5"/>
+<circle cx="286.3" cy="127.1" r="3.5" fill="#39D353" stroke="#0d1117" stroke-width="1.5"/>
+<circle cx="307.0" cy="199.9" r="3.5" fill="#39D353" stroke="#0d1117" stroke-width="1.5"/>
+<circle cx="255.4" cy="253.5" r="3.5" fill="#39D353" stroke="#0d1117" stroke-width="1.5"/>
+<circle cx="182.2" cy="258.4" r="3.5" fill="#39D353" stroke="#0d1117" stroke-width="1.5"/>
+<circle cx="145.7" cy="196.9" r="3.5" fill="#39D353" stroke="#0d1117" stroke-width="1.5"/>
+<circle cx="155.4" cy="128.4" r="3.5" fill="#39D353" stroke="#0d1117" stroke-width="1.5"/>
+<text x="220.0" y="43.2" text-anchor="middle" class="r-label">JavaScript</text>
+<text x="327.8" y="93.2" text-anchor="start" class="r-label">TypeScript</text>
+<text x="353.5" y="213.1" text-anchor="start" class="r-label">React</text>
+<text x="281.6" y="311.6" text-anchor="start" class="r-label">Next.js</text>
+<text x="158.4" y="311.6" text-anchor="end" class="r-label">Node.js</text>
+<text x="86.5" y="213.1" text-anchor="end" class="r-label">HTML / CSS</text>
+<text x="112.2" y="93.2" text-anchor="end" class="r-label">Git</text>
 </svg>

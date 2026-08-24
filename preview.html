@@ -3,48 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile README Preview</title>
+  <title>Profile README Preview — krushnasaruk</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600;700&display=swap');
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', -apple-system, sans-serif;
-      background: #0a0a0a;
-      color: #e6e6e6;
-      padding: 40px 20px;
+      background: #080b0f;
+      color: #e6edf3;
+      padding: 30px 20px;
     }
 
     h1 {
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
+      font-family: 'JetBrains Mono', monospace;
       color: #39D353;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .subtitle {
       text-align: center;
       color: #8b949e;
-      font-size: 0.85rem;
-      margin-bottom: 40px;
+      font-size: 0.82rem;
+      margin-bottom: 24px;
     }
 
     .controls {
       text-align: center;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
     button {
       font-family: 'JetBrains Mono', monospace;
       background: #39D353;
-      color: #0d1117;
+      color: #080b0f;
       border: none;
-      padding: 8px 20px;
+      padding: 7px 18px;
       border-radius: 6px;
       cursor: pointer;
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 0.8rem;
+      font-weight: 700;
       margin: 0 4px;
       transition: opacity 0.2s;
     }
@@ -52,16 +53,16 @@
     button:hover { opacity: 0.85; }
 
     .section {
-      max-width: 900px;
-      margin: 0 auto 40px;
+      max-width: 960px;
+      margin: 0 auto 30px;
     }
 
     .section h2 {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: #8b949e;
-      margin-bottom: 16px;
-      padding-bottom: 8px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
       border-bottom: 1px solid #21262d;
     }
 
@@ -73,14 +74,15 @@
 
     .card {
       border-radius: 8px;
-      padding: 20px;
+      padding: 16px;
       text-align: center;
       position: relative;
+      overflow: hidden;
     }
 
     .card.dark {
-      background: #0d1117;
-      border: 1px solid #30363d;
+      background: #0b0f14;
+      border: 1px solid #21262d;
     }
 
     .card.light {
@@ -90,8 +92,8 @@
 
     .card .label {
       position: absolute;
-      top: 8px;
-      right: 12px;
+      top: 6px;
+      right: 10px;
       font-size: 0.65rem;
       font-family: 'JetBrains Mono', monospace;
       opacity: 0.5;
@@ -100,30 +102,30 @@
     .card.dark .label { color: #8b949e; }
     .card.light .label { color: #656d76; }
 
-    .card img, .card object {
+    .card img {
       max-width: 100%;
       height: auto;
+      display: inline-block;
     }
 
     .missing {
       color: #484f58;
       font-style: italic;
       font-size: 0.8rem;
-      padding: 40px 0;
+      padding: 20px 0;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .card-pair { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <h1>~/preview</h1>
-  <p class="subtitle">Profile README asset preview — dark &amp; light</p>
+  <h1>~/ krushnasaruk preview</h1>
+  <p class="subtitle">Profile README visual check — Dark &amp; Light themes</p>
 
   <div class="controls">
     <button onclick="reloadAll()">↻ Reload all</button>
-    <button onclick="replayReveal()">▶ Replay load-in</button>
   </div>
 
   <!-- Portrait -->
@@ -132,109 +134,107 @@
     <div class="card-pair">
       <div class="card dark">
         <span class="label">dark</span>
-        <img src="assets/portrait.svg" alt="portrait" onerror="this.outerHTML='<p class=missing>portrait.svg not found — run dotify.py first</p>'">
+        <img src="assets/portrait.svg" alt="portrait">
       </div>
       <div class="card light">
         <span class="label">light</span>
-        <img src="assets/portrait.svg" alt="portrait" onerror="this.outerHTML='<p class=missing>portrait.svg not found</p>'">
+        <img src="assets/portrait.svg" alt="portrait">
       </div>
     </div>
   </div>
 
-  <!-- Self-rated Radar -->
+  <!-- 3D Isometric Calendar -->
   <div class="section">
-    <h2>radar — self-rated</h2>
+    <h2>3D isometric contribution terrain (custom angle)</h2>
     <div class="card-pair">
       <div class="card dark">
         <span class="label">dark</span>
-        <img src="assets/radar-dark.svg" alt="radar dark" onerror="this.outerHTML='<p class=missing>radar-dark.svg not found — run radar.py first</p>'">
+        <img src="assets/isometric-calendar-dark.svg" alt="3d iso dark">
       </div>
       <div class="card light">
         <span class="label">light</span>
-        <img src="assets/radar-light.svg" alt="radar light" onerror="this.outerHTML='<p class=missing>radar-light.svg not found</p>'">
+        <img src="assets/isometric-calendar-light.svg" alt="3d iso light">
       </div>
     </div>
   </div>
 
-  <!-- Language Radar -->
+  <!-- Stats -->
   <div class="section">
-    <h2>radar — languages (from API)</h2>
+    <h2>stats card (animated)</h2>
     <div class="card-pair">
       <div class="card dark">
         <span class="label">dark</span>
-        <img src="assets/radar-langs-dark.svg" alt="lang radar dark" onerror="this.outerHTML='<p class=missing>radar-langs-dark.svg not found — run radar.py --github first</p>'">
+        <img src="assets/stats-dark.svg" alt="stats dark">
       </div>
       <div class="card light">
         <span class="label">light</span>
-        <img src="assets/radar-langs-light.svg" alt="lang radar light" onerror="this.outerHTML='<p class=missing>radar-langs-light.svg not found</p>'">
+        <img src="assets/stats-light.svg" alt="stats light">
       </div>
     </div>
   </div>
 
-  <!-- Stats Card -->
+  <!-- Radars -->
   <div class="section">
-    <h2>stats card</h2>
+    <h2>radar charts (skills &amp; languages)</h2>
+    <div class="card-pair">
+      <div class="card dark">
+        <span class="label">skills - dark</span>
+        <img src="assets/radar-dark.svg" alt="radar dark">
+      </div>
+      <div class="card dark">
+        <span class="label">languages - dark</span>
+        <img src="assets/radar-langs-dark.svg" alt="lang radar dark">
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Projects -->
+  <div class="section">
+    <h2>featured projects (AntariX &amp; Cancer)</h2>
+    <div class="card-pair">
+      <div class="card dark">
+        <span class="label">AntariX</span>
+        <img src="assets/card-AntariX-dark.svg" alt="AntariX">
+      </div>
+      <div class="card dark">
+        <span class="label">Cancer</span>
+        <img src="assets/card-Cancer-dark.svg" alt="Cancer">
+      </div>
+    </div>
+    <div class="card-pair" style="margin-top: 12px;">
+      <div class="card dark">
+        <span class="label">sutraverse2.0</span>
+        <img src="assets/card-sutraverse2.0-dark.svg" alt="sutraverse2.0">
+      </div>
+      <div class="card dark">
+        <span class="label">NormEdu</span>
+        <img src="assets/card-NormEdu-dark.svg" alt="NormEdu">
+      </div>
+    </div>
+  </div>
+
+  <!-- Achievements -->
+  <div class="section">
+    <h2>achievements showcase</h2>
     <div class="card-pair">
       <div class="card dark">
         <span class="label">dark</span>
-        <img src="assets/stats-dark.svg" alt="stats dark" onerror="this.outerHTML='<p class=missing>stats-dark.svg not found — run cards.py first</p>'">
+        <img src="assets/achievements-dark.svg" alt="achievements dark">
       </div>
       <div class="card light">
         <span class="label">light</span>
-        <img src="assets/stats-light.svg" alt="stats light" onerror="this.outerHTML='<p class=missing>stats-light.svg not found</p>'">
+        <img src="assets/achievements-light.svg" alt="achievements light">
       </div>
     </div>
-  </div>
-
-  <!-- Project Cards -->
-  <div class="section" id="project-cards">
-    <h2>project cards</h2>
-    <p class="missing" id="no-projects">Project card SVGs will appear here after running cards.py</p>
   </div>
 
   <script>
     function reloadAll() {
       document.querySelectorAll('img').forEach(img => {
-        const src = img.getAttribute('src');
+        const src = img.getAttribute('src').split('?')[0];
         img.src = src + '?t=' + Date.now();
       });
     }
-
-    function replayReveal() {
-      document.querySelectorAll('img').forEach(img => {
-        const src = img.getAttribute('src').split('?')[0];
-        img.src = '';
-        setTimeout(() => { img.src = src + '?t=' + Date.now(); }, 50);
-      });
-    }
-
-    // Try to detect project cards
-    const projectNames = ['project-one', 'project-two', 'project-three', 'project-four'];
-    const container = document.getElementById('project-cards');
-    const noProjects = document.getElementById('no-projects');
-    let found = false;
-
-    projectNames.forEach(name => {
-      const darkSrc = `assets/card-${name}-dark.svg`;
-      const lightSrc = `assets/card-${name}-light.svg`;
-
-      const pair = document.createElement('div');
-      pair.className = 'card-pair';
-      pair.style.marginBottom = '16px';
-      pair.innerHTML = `
-        <div class="card dark">
-          <span class="label">dark</span>
-          <img src="${darkSrc}" alt="${name} dark"
-               onerror="this.parentElement.parentElement.style.display='none'">
-        </div>
-        <div class="card light">
-          <span class="label">light</span>
-          <img src="${lightSrc}" alt="${name} light"
-               onerror="this.parentElement.parentElement.style.display='none'">
-        </div>
-      `;
-      container.appendChild(pair);
-    });
   </script>
 </body>
 </html>
