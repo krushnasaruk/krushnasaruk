@@ -89,9 +89,9 @@ def fetch_real_contributions(username):
     return weeks_matrix, 134, 1859
 
 
-def render_3d_isometric_svg(weeks, total_365, all_time, theme="dark", accent="#39D353", width=740, height=210):
+def render_3d_isometric_svg(weeks, total_365, all_time, theme="dark", accent="#39D353", width=720, height=235):
     """
-    Render 3D isometric landscape perfectly centered with zero legend collision.
+    Render 3D isometric landscape perfectly centered with zero clipping and zero legend collision.
     """
     if theme == "dark":
         bg_card = "#0b0f14"
@@ -111,14 +111,14 @@ def render_3d_isometric_svg(weeks, total_365, all_time, theme="dark", accent="#3
         shadow_fill = "#e1e4e8"
 
     # Isometric projection vectors
-    dx_w = 9.8
-    dy_w = 2.3
-    dx_d = -5.2
-    dy_d = 4.8
+    dx_w = 9.4
+    dy_w = 2.1
+    dx_d = -5.0
+    dy_d = 4.6
 
-    # Origin offset adjusted upward to vertically center the terrain
-    origin_x = 95
-    origin_y = 80
+    # Origin offset centered cleanly within 720x235 canvas
+    origin_x = 105
+    origin_y = 60
 
     total_weeks = len(weeks)
 
@@ -246,7 +246,7 @@ def main():
     print(f"  Real 365d contributions: {total_365} | All-time: {all_time}")
 
     for theme in ["dark", "light"]:
-        svg = render_3d_isometric_svg(weeks, total_365, all_time, theme=theme, accent=args.accent, width=740, height=205)
+        svg = render_3d_isometric_svg(weeks, total_365, all_time, theme=theme, accent=args.accent, width=720, height=235)
         path = os.path.join(args.out, f"isometric-calendar-{theme}.svg")
         with open(path, "w", encoding="utf-8") as f:
             f.write(svg)
