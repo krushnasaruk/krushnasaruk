@@ -1,32 +1,29 @@
-<div align="center">
+<table>
+<tr>
+<td width="30%" align="center" valign="middle">
+  <img src="assets/portrait.svg" width="220" alt="Krushna Pralhad Saruk">
+</td>
+<td width="70%" valign="middle">
 
-<!-- DOT-MATRIX PORTRAIT -->
-<img src="assets/portrait.svg" width="230" alt="portrait">
+### `~/` Krushna Pralhad Saruk
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&duration=2400&pause=800&color=39D353&width=460&lines=CS+Student+%7C+AI+%26+Robotics+Researcher;Building+AntariX+%26+Cancer+Quadruped;12M%2B+RL+Steps+in+MuJoCo+%26+Three.js;01100011+01101111+01100100+01100101" alt="typing">
 
-<br>
+> *"CS student who codes at night and debugs at dawn. Building deep-space digital twins, reinforcement learning robotics controllers, and modern SaaS platforms."*
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=23&duration=2400&pause=800&color=39D353&center=true&vCenter=true&width=480&lines=Krushna+Pralhad+Saruk;CS+student+%7C+Builder+%7C+Debugger;01100011+01101111+01100100+01100101" alt="typing">
+- 🪐 **Current Focus**: **[AntariX](https://github.com/krushnasaruk/AntariX)** (Earth–Mars autonomous comms) & **[Cancer](https://github.com/krushnasaruk/Cancer)** (Sim-to-Real quadruped)
+- 🌐 **Portfolio**: **[krushnasaruk.in](https://krushnasaruk.in)** &nbsp;|&nbsp; ⚡ **Specialties**: Full-Stack, RL & Robotics Sim
 
-<a href="https://krushnasaruk.in"><img src="https://img.shields.io/badge/Portfolio-39D353?style=for-the-badge&logo=googlechrome&logoColor=white" alt="portfolio"></a>
-&nbsp;
-<img src="https://komarev.com/ghpvc/?username=krushnasaruk&color=39d353&label=profile+views&style=flat-square" alt="views">
+<p align="left">
+  <a href="https://krushnasaruk.in"><img src="https://img.shields.io/badge/Portfolio-39D353?style=for-the-badge&logo=googlechrome&logoColor=white" alt="portfolio"></a>
+  <a href="https://linkedin.com/in/krushnasaruk"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin"></a>
+  <a href="mailto:krushnasaruk@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="email"></a>
+  <a href="https://leetcode.com/krushnasaruk"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="leetcode"></a>
+  <img src="https://komarev.com/ghpvc/?username=krushnasaruk&color=39d353&label=views&style=for-the-badge" alt="views">
+</p>
 
-</div>
-
----
-
-## `~/` whoami
-
-```console
-$ cat about.txt
-```
-
-Hi, I'm **Krushna Pralhad Saruk** — CS student who codes at night and debugs at dawn.
-
-- 🔭 Architecting **[AntariX](https://github.com/krushnasaruk/AntariX)** (Earth–Mars comms digital twin) & **[Cancer](https://github.com/krushnasaruk/Cancer)** (12M+ RL step quadruped in MuJoCo)
-- 🌐 Portfolio → **[krushnasaruk.in](https://krushnasaruk.in)**
-- 🌱 Exploring **Reinforcement Learning, Robotics Simulation & Full-Stack Systems**
-- ⚡ I name systems after Greek constellations and mythical titans
+</td>
+</tr>
+</table>
 
 <div align="center">
 <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,python,html,css,git,github,vscode&perline=11" alt="tech stack">

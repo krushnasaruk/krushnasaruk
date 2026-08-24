@@ -172,13 +172,18 @@ def render_dots_svg(grid, cols, rows, color_mode=False, accent="#39D353",
             if invert:
                 b = 1.0 - b
 
-            # Map brightness to dot radius (brighter = bigger dot on dark, smaller on light)
-            if theme == "dark" or color_mode:
-                radius = (1.0 - b) * (cell_size * 0.45)
+            # In color mode, each dot uses its real RGB pixel color; radius scales with brightness/opacity
+            if color_mode:
+                # Give colorful pixels strong coverage with minimum visibility floor
+                radius = max(1.2, math.sqrt(b) * (cell_size * 0.46))
+            elif theme == "dark":
+                # On dark background: brighter areas have larger bright dots
+                radius = max(0.5, b * (cell_size * 0.48))
             else:
-                radius = b * (cell_size * 0.45)
+                # On light background: darker areas have larger dark dots
+                radius = max(0.5, (1.0 - b) * (cell_size * 0.48))
 
-            if radius < 0.3:
+            if radius < 0.4:
                 continue
 
             cx = cell["c"] * cell_size + cell_size / 2
