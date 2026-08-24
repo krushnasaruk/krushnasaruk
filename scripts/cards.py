@@ -181,11 +181,14 @@ def draw_stat_card_svg(stats, username, theme="dark", accent="#39D353"):
     safe_username = html.escape(username)
     safe_top_lang = html.escape(str(stats.get("top_language", "JS")))
 
+    contrib_val = stats.get("contributions", 1859)
+    contrib_str = f"{contrib_val:,}" if isinstance(contrib_val, int) else str(contrib_val)
+
     tiles = [
         ("Repositories", str(stats.get("total_repos", 36)), "📦"),
         ("Total Stars", str(stats.get("total_stars", 5)), "⭐"),
         ("Total Forks", str(stats.get("total_forks", 0)), "🍴"),
-        ("Contributions", str(stats.get("contributions", 140)), "🔥"),
+        ("Contributions", contrib_str, "🔥"),
         ("Current Streak", f"{stats.get('streak', 12)}d", "⚡"),
         ("Top Stack", safe_top_lang, "💻"),
     ]
