@@ -71,11 +71,13 @@ Hi, I'm **Krushna Pralhad Saruk** — CS student who codes at night and debugs a
   <img src="assets/isometric-calendar-dark.svg" width="690" alt="3D isometric contributions">
 </picture>
 
+<!-- Uncomment once Snake workflow has run and created the output branch:
 <picture>
   <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/krushnasaruk/krushnasaruk/output/snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/krushnasaruk/krushnasaruk/output/snake-light.svg">
   <img src="https://raw.githubusercontent.com/krushnasaruk/krushnasaruk/output/snake-dark.svg" width="690" alt="contribution snake">
 </picture>
+-->
 
 </div>
 
