@@ -132,10 +132,15 @@ def render_3d_isometric_svg(weeks, total_365, all_time, theme="dark", accent="#3
     .iso-val {{ font-family: "JetBrains Mono", monospace; font-size: 10px; font-weight: 700; fill: {accent}; }}
     .cam-tag {{ font-family: "JetBrains Mono", monospace; font-size: 8.5px; font-weight: 600; fill: {accent}; }}
     
-    @keyframes isoPeakGlow {{
-      0%, 100% {{ opacity: 0.88; }}
-      50% {{ opacity: 1; filter: drop-shadow(0 0 3px {accent}); }}
+    @keyframes voxelRise {{
+      from {{ opacity: 0; transform: translateY(8px); }}
+      to {{ opacity: 1; transform: translateY(0); }}
     }}
+    @keyframes isoPeakGlow {{
+      0%, 100% {{ opacity: 0.88; filter: drop-shadow(0 0 1px {accent}); }}
+      50% {{ opacity: 1; filter: drop-shadow(0 0 5px {accent}); }}
+    }}
+    .iso-stage {{ animation: voxelRise 0.8s ease-out both; }}
     .glow-peak {{ animation: isoPeakGlow 2.5s ease-in-out infinite; }}
   </style>
   <linearGradient id="isoCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -163,6 +168,7 @@ def render_3d_isometric_svg(weeks, total_365, all_time, theme="dark", accent="#3
     lines.append(f'</g>')
 
     # Render voxels in back-to-front order (Painter's Algorithm)
+    lines.append('<g class="iso-stage">')
     for w_idx in range(total_weeks):
         for d_idx in range(7):
             count = weeks[w_idx][d_idx] if d_idx < len(weeks[w_idx]) else 0
@@ -228,6 +234,7 @@ def render_3d_isometric_svg(weeks, total_365, all_time, theme="dark", accent="#3
                 cls_attr = ' class="glow-peak"' if is_peak else ''
                 lines.append(f'<polygon points="{top_pts}" fill="{top_color}" stroke="{theme == "dark" and "#39D353" or "#ffffff"}" stroke-width="0.4"{cls_attr}/>')
 
+    lines.append('</g>')
     lines.append('</svg>')
     return '\n'.join(lines)
 

@@ -121,6 +121,7 @@ def sample_grid(img, cols, circle=False):
             row.append({
                 "brightness": brightness,
                 "color": f"rgb({avg_r},{avg_g},{avg_b})",
+                "hex": f"#{avg_r:02x}{avg_g:02x}{avg_b:02x}",
                 "r": r,
                 "c": c,
             })
@@ -128,42 +129,55 @@ def sample_grid(img, cols, circle=False):
     return grid, cols, rows
 
 
+def rgb_to_hex(r, g, b):
+    """Convert rgb to short hex."""
+    return f"#{r:02x}{g:02x}{b:02x}"
+
+
 def render_dots_svg(grid, cols, rows, color_mode=False, accent="#39D353",
-                    theme="dark", animate=False, reveal=False,
-                    reveal_time=2.5, reveal_fade=0.45, reveal_dir="down",
+                    theme="dark", animate=False, reveal=True,
+                    reveal_time=1.8, reveal_fade=0.35, reveal_dir="down",
                     invert=False):
-    """Render the grid as an SVG with dots."""
+    """Render the grid as an ultra-optimized SVG with smooth CSS animations."""
     cell_size = 10
     svg_w = cols * cell_size
     svg_h = rows * cell_size
 
-    bg = "none"
     default_fill = accent if not color_mode else None
     if theme == "light" and not color_mode:
         default_fill = "#1a1a2e"
 
     lines = []
     lines.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {svg_w} {svg_h}" width="{svg_w}" height="{svg_h}">')
-
-    if animate or reveal:
-        lines.append("<defs>")
-        if animate:
-            lines.append("""<style>
-  @keyframes shimmer {
-    0%, 100% { opacity: 0.7; }
-    50% { opacity: 1; }
+    lines.append("<defs>")
+    lines.append("<style>")
+    lines.append("""
+  @keyframes matrixReveal {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
   }
-</style>""")
-        if reveal:
-            lines.append("""<style>
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  @keyframes avatarGlow {
+    0%, 100% { filter: drop-shadow(0 0 1px rgba(57, 211, 83, 0.2)); }
+    50% { filter: drop-shadow(0 0 6px rgba(57, 211, 83, 0.45)); }
   }
-</style>""")
-        lines.append("</defs>")
+  .dot-grid { animation: avatarGlow 4s ease-in-out infinite; }
+  .row { animation: matrixReveal 0.4s ease-out both; }
+""")
 
-    for row in grid:
+    # Generate row animation delay classes in style tag
+    if reveal:
+        total_rows = rows
+        for r in range(rows):
+            delay = (r / total_rows) * reveal_time if reveal_dir == "down" else ((total_rows - r) / total_rows) * reveal_time
+            lines.append(f"  .r{r} {{ animation-delay: {delay:.2f}s; }}")
+
+    lines.append("</style>")
+    lines.append("</defs>")
+
+    lines.append('<g class="dot-grid">')
+
+    for r, row in enumerate(grid):
+        row_circles = []
         for cell in row:
             if cell is None:
                 continue
@@ -172,15 +186,11 @@ def render_dots_svg(grid, cols, rows, color_mode=False, accent="#39D353",
             if invert:
                 b = 1.0 - b
 
-            # In color mode, each dot uses its real RGB pixel color; radius scales with brightness/opacity
             if color_mode:
-                # Give colorful pixels strong coverage with minimum visibility floor
-                radius = max(1.2, math.sqrt(b) * (cell_size * 0.46))
+                radius = max(1.1, math.sqrt(b) * (cell_size * 0.45))
             elif theme == "dark":
-                # On dark background: brighter areas have larger bright dots
                 radius = max(0.5, b * (cell_size * 0.48))
             else:
-                # On light background: darker areas have larger dark dots
                 radius = max(0.5, (1.0 - b) * (cell_size * 0.48))
 
             if radius < 0.4:
@@ -189,27 +199,16 @@ def render_dots_svg(grid, cols, rows, color_mode=False, accent="#39D353",
             cx = cell["c"] * cell_size + cell_size / 2
             cy = cell["r"] * cell_size + cell_size / 2
 
-            fill = cell["color"] if color_mode else default_fill
+            # Use hex color
+            fill = cell.get("hex") or (cell["color"] if color_mode else default_fill)
 
-            style_parts = []
-            if animate:
-                delay = cell["c"] * 0.05
-                style_parts.append(f"animation: shimmer 3s ease-in-out {delay:.2f}s infinite")
+            row_circles.append(f'<circle cx="{cx:.0f}" cy="{cy:.0f}" r="{radius:.1f}" fill="{fill}"/>')
 
-            if reveal:
-                total_rows = rows
-                if reveal_dir == "up":
-                    row_delay = (total_rows - cell["r"]) / total_rows * reveal_time
-                else:
-                    row_delay = cell["r"] / total_rows * reveal_time
-                style_parts.append(f"animation: fadeIn {reveal_fade}s ease-out {row_delay:.3f}s both")
+        if row_circles:
+            cls_attr = f' class="row r{r}"' if reveal else ""
+            lines.append(f'<g{cls_attr}>' + "".join(row_circles) + '</g>')
 
-            style_attr = f' style="{"; ".join(style_parts)}"' if style_parts else ""
-
-            lines.append(
-                f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{radius:.2f}" fill="{fill}"{style_attr}/>'
-            )
-
+    lines.append('</g>')
     lines.append("</svg>")
     return "\n".join(lines)
 
