@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-achievements.py — Generate high-aesthetic developer achievement badges showcase SVG.
+achievements.py — Generate high-aesthetic, spacious developer achievement badges showcase SVG.
 
 Usage:
     python scripts/achievements.py --out assets
@@ -18,15 +18,15 @@ ACHIEVEMENTS = [
         "title": "Deep Space Architect",
         "desc": "AntariX Earth–Mars Digital Twin & ML Comms",
         "tier": "DIAMOND",
-        "tier_color": "#00f0ff",
+        "tier_color": "#00e5ff",
     },
     {
         "id": "cancer",
         "icon": "🤖",
         "title": "Robotics Sim-to-Real",
-        "desc": "12M+ RL Training Steps in MuJoCo & Three.js",
+        "desc": "12M+ RL Steps in MuJoCo & Three.js Quadruped",
         "tier": "MASTER",
-        "tier_color": "#a855f7",
+        "tier_color": "#c084fc",
     },
     {
         "id": "edtech",
@@ -34,7 +34,7 @@ ACHIEVEMENTS = [
         "title": "EdTech Innovator",
         "desc": "NormEdu SaaS & sutraverse2.0 Biometric ERP",
         "tier": "GOLD",
-        "tier_color": "#eab308",
+        "tier_color": "#fbbf24",
     },
     {
         "id": "polyglot",
@@ -48,7 +48,7 @@ ACHIEVEMENTS = [
         "id": "cosmos",
         "icon": "🌌",
         "title": "Celestial Architect",
-        "desc": "Constellation & Mythological Systems",
+        "desc": "Constellation & Mythological System Architectures",
         "tier": "RARE",
         "tier_color": "#38bdf8",
     },
@@ -56,15 +56,15 @@ ACHIEVEMENTS = [
         "id": "nightowl",
         "icon": "🌙",
         "title": "Night Owl Builder",
-        "desc": "Codes at night, debugs at dawn",
+        "desc": "Codes at night, debugs at dawn (1.8K+ commits)",
         "tier": "LEGENDARY",
-        "tier_color": "#f97316",
+        "tier_color": "#fb923c",
     },
 ]
 
 
-def draw_achievements_svg(theme="dark", accent="#39D353", width=680, height=220):
-    """Render a compact, high-polish 3x2 achievement trophy showcase."""
+def draw_achievements_svg(theme="dark", accent="#39D353", width=720, height=280):
+    """Render a spacious, clean 2x3 achievement showcase with ample horizontal breathing room."""
     if theme == "dark":
         bg_card = "#0b0f14"
         card_stroke = "#21262d"
@@ -86,15 +86,9 @@ def draw_achievements_svg(theme="dark", accent="#39D353", width=680, height=220)
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap');
     .ach-title {{ font-family: "JetBrains Mono", monospace; font-size: 12.5px; font-weight: 700; fill: {text_primary}; }}
-    .ach-header {{ font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 700; fill: {text_primary}; }}
-    .ach-desc {{ font-family: "Inter", sans-serif; font-size: 9px; fill: {text_secondary}; }}
+    .ach-header {{ font-family: "JetBrains Mono", monospace; font-size: 12px; font-weight: 700; fill: {text_primary}; }}
+    .ach-desc {{ font-family: "Inter", sans-serif; font-size: 9.5px; fill: {text_secondary}; }}
     .ach-tier {{ font-family: "JetBrains Mono", monospace; font-size: 8px; font-weight: 700; }}
-    
-    @keyframes trophyGlow {{
-      0%, 100% {{ opacity: 0.7; }}
-      50% {{ opacity: 1; }}
-    }}
-    .trophy-badge {{ animation: trophyGlow 3s ease-in-out infinite; }}
   </style>
   <linearGradient id="achCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
     <stop offset="0%" stop-color="{bg_card}"/>
@@ -110,16 +104,16 @@ def draw_achievements_svg(theme="dark", accent="#39D353", width=680, height=220)
     lines.append(f'<rect x="{width-92}" y="12" width="76" height="18" rx="9" fill="{accent}18" stroke="{accent}" stroke-opacity="0.3" stroke-width="0.8"/>')
     lines.append(f'<text x="{width-54}" y="24" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5px" font-weight="700" fill="{accent}">6 UNLOCKED</text>')
 
-    # 3x2 Grid layout
-    cols = 3
-    tile_w = (width - 40 - (cols - 1) * 10) // cols
-    tile_h = 70
+    # 2x3 Grid layout (2 columns, 3 rows for plenty of horizontal space!)
+    cols = 2
+    tile_w = (width - 40 - 14) // cols  # ~333px per tile
+    tile_h = 66
     start_y = 44
 
     for i, item in enumerate(ACHIEVEMENTS):
         c = i % cols
         r = i // cols
-        tx = 20 + c * (tile_w + 10)
+        tx = 20 + c * (tile_w + 14)
         ty = start_y + r * (tile_h + 10)
 
         tier_col = item["tier_color"]
@@ -133,15 +127,15 @@ def draw_achievements_svg(theme="dark", accent="#39D353", width=680, height=220)
         lines.append(f'  <rect x="0" y="6" width="3" height="{tile_h-12}" rx="1.5" fill="{tier_col}"/>')
 
         # Icon
-        lines.append(f'  <text x="12" y="26" font-size="18">{item["icon"]}</text>')
+        lines.append(f'  <text x="12" y="28" font-size="20">{item["icon"]}</text>')
 
         # Title & Tier badge
-        lines.append(f'  <text x="36" y="22" class="ach-header">{safe_title}</text>')
-        lines.append(f'  <rect x="{tile_w-56}" y="11" width="48" height="14" rx="7" fill="{tier_col}18" stroke="{tier_col}" stroke-width="0.6"/>')
-        lines.append(f'  <text x="{tile_w-32}" y="21.5" text-anchor="middle" class="ach-tier" fill="{tier_col}">{item["tier"]}</text>')
+        lines.append(f'  <text x="40" y="24" class="ach-header">{safe_title}</text>')
+        lines.append(f'  <rect x="{tile_w-62}" y="12" width="52" height="16" rx="8" fill="{tier_col}18" stroke="{tier_col}" stroke-width="0.7"/>')
+        lines.append(f'  <text x="{tile_w-36}" y="23.5" text-anchor="middle" class="ach-tier" fill="{tier_col}">{item["tier"]}</text>')
 
         # Description
-        lines.append(f'  <text x="12" y="46" class="ach-desc">{safe_desc}</text>')
+        lines.append(f'  <text x="40" y="46" class="ach-desc">{safe_desc}</text>')
         lines.append(f'</g>')
 
     lines.append('</svg>')
@@ -156,9 +150,9 @@ def main():
     args = parser.parse_args()
     os.makedirs(args.out, exist_ok=True)
 
-    print("Generating Developer Achievement Badges...")
+    print("Generating Spacious 2-Column Developer Achievement Badges...")
     for theme in ["dark", "light"]:
-        svg = draw_achievements_svg(theme=theme, accent=args.accent, width=680, height=210)
+        svg = draw_achievements_svg(theme=theme, accent=args.accent, width=720, height=280)
         path = os.path.join(args.out, f"achievements-{theme}.svg")
         with open(path, "w", encoding="utf-8") as f:
             f.write(svg)
