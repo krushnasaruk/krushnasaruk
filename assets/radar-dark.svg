@@ -6,47 +6,47 @@
 </style>
 </defs>
 <text x="200.0" y="22" text-anchor="middle" fill="#e6e6e6" font-size="13" font-weight="600">Skill Radar</text>
-<polygon points="200.0,172.0 221.9,182.5 227.3,206.2 212.1,225.2 187.9,225.2 172.7,206.2 178.1,182.5" fill="none" stroke="#333333" stroke-width="0.5"/>
-<polygon points="200.0,144.0 243.8,165.1 254.6,212.5 224.3,250.5 175.7,250.5 145.4,212.5 156.2,165.1" fill="none" stroke="#333333" stroke-width="0.5"/>
-<polygon points="200.0,116.0 265.7,147.6 281.9,218.7 236.4,275.7 163.6,275.7 118.1,218.7 134.3,147.6" fill="none" stroke="#333333" stroke-width="0.5"/>
-<polygon points="200.0,88.0 287.6,130.2 309.2,224.9 248.6,300.9 151.4,300.9 90.8,224.9 112.4,130.2" fill="none" stroke="#333333" stroke-width="0.5"/>
-<polygon points="200.0,60.0 309.5,112.7 336.5,231.2 260.7,326.1 139.3,326.1 63.5,231.2 90.5,112.7" fill="none" stroke="#333333" stroke-width="0.5"/>
-<line x1="200.0" y1="200.0" x2="200.0" y2="60.0" stroke="#333333" stroke-width="0.5"/>
-<line x1="200.0" y1="200.0" x2="309.5" y2="112.7" stroke="#333333" stroke-width="0.5"/>
-<line x1="200.0" y1="200.0" x2="336.5" y2="231.2" stroke="#333333" stroke-width="0.5"/>
-<line x1="200.0" y1="200.0" x2="260.7" y2="326.1" stroke="#333333" stroke-width="0.5"/>
-<line x1="200.0" y1="200.0" x2="139.3" y2="326.1" stroke="#333333" stroke-width="0.5"/>
-<line x1="200.0" y1="200.0" x2="63.5" y2="231.2" stroke="#333333" stroke-width="0.5"/>
-<line x1="200.0" y1="200.0" x2="90.5" y2="112.7" stroke="#333333" stroke-width="0.5"/>
-<polygon points="200.0,81.0 285.4,131.9 311.9,225.5 245.6,294.6 151.4,300.9 104.5,221.8 116.8,133.7" fill="#39D353" fill-opacity="0.25" stroke="#39D353" stroke-width="2">
+<polygon points="200.0,186.5 216.8,194.6 221.0,212.8 209.3,227.4 190.7,227.4 179.0,212.8 183.2,194.6" fill="none" stroke="#333333" stroke-width="0.5"/>
+<polygon points="200.0,165.0 233.6,181.2 241.9,217.6 218.7,246.7 181.3,246.7 158.1,217.6 166.4,181.2" fill="none" stroke="#333333" stroke-width="0.5"/>
+<polygon points="200.0,143.5 250.4,167.8 262.9,222.4 228.0,266.1 172.0,266.1 137.1,222.4 149.6,167.8" fill="none" stroke="#333333" stroke-width="0.5"/>
+<polygon points="200.0,122.0 267.3,154.4 283.9,227.1 237.3,285.5 162.7,285.5 116.1,227.1 132.7,154.4" fill="none" stroke="#333333" stroke-width="0.5"/>
+<polygon points="200.0,100.5 284.1,141.0 304.8,231.9 246.7,304.9 153.3,304.9 95.2,231.9 115.9,141.0" fill="none" stroke="#333333" stroke-width="0.5"/>
+<line x1="200.0" y1="208.0" x2="200.0" y2="100.5" stroke="#333333" stroke-width="0.5"/>
+<line x1="200.0" y1="208.0" x2="284.1" y2="141.0" stroke="#333333" stroke-width="0.5"/>
+<line x1="200.0" y1="208.0" x2="304.8" y2="231.9" stroke="#333333" stroke-width="0.5"/>
+<line x1="200.0" y1="208.0" x2="246.7" y2="304.9" stroke="#333333" stroke-width="0.5"/>
+<line x1="200.0" y1="208.0" x2="153.3" y2="304.9" stroke="#333333" stroke-width="0.5"/>
+<line x1="200.0" y1="208.0" x2="95.2" y2="231.9" stroke="#333333" stroke-width="0.5"/>
+<line x1="200.0" y1="208.0" x2="115.9" y2="141.0" stroke="#333333" stroke-width="0.5"/>
+<polygon points="200.0,116.6 265.6,155.7 286.0,227.6 235.0,280.7 162.7,285.5 126.6,224.7 136.1,157.1" fill="#39D353" fill-opacity="0.25" stroke="#39D353" stroke-width="2">
   <animate attributeName="fill-opacity" values="0;0.25" dur="0.8s" fill="freeze"/>
 </polygon>
-<circle cx="200.0" cy="81.0" r="3.5" fill="#39D353" opacity="0.9">
+<circle cx="200.0" cy="116.6" r="3.5" fill="#39D353" opacity="0.9">
   <animate attributeName="r" values="0;3.5" dur="0.5s" begin="0.00s" fill="freeze"/>
 </circle>
-<circle cx="285.4" cy="131.9" r="3.5" fill="#39D353" opacity="0.9">
+<circle cx="265.6" cy="155.7" r="3.5" fill="#39D353" opacity="0.9">
   <animate attributeName="r" values="0;3.5" dur="0.5s" begin="0.05s" fill="freeze"/>
 </circle>
-<circle cx="311.9" cy="225.5" r="3.5" fill="#39D353" opacity="0.9">
+<circle cx="286.0" cy="227.6" r="3.5" fill="#39D353" opacity="0.9">
   <animate attributeName="r" values="0;3.5" dur="0.5s" begin="0.10s" fill="freeze"/>
 </circle>
-<circle cx="245.6" cy="294.6" r="3.5" fill="#39D353" opacity="0.9">
+<circle cx="235.0" cy="280.7" r="3.5" fill="#39D353" opacity="0.9">
   <animate attributeName="r" values="0;3.5" dur="0.5s" begin="0.15s" fill="freeze"/>
 </circle>
-<circle cx="151.4" cy="300.9" r="3.5" fill="#39D353" opacity="0.9">
+<circle cx="162.7" cy="285.5" r="3.5" fill="#39D353" opacity="0.9">
   <animate attributeName="r" values="0;3.5" dur="0.5s" begin="0.20s" fill="freeze"/>
 </circle>
-<circle cx="104.5" cy="221.8" r="3.5" fill="#39D353" opacity="0.9">
+<circle cx="126.6" cy="224.7" r="3.5" fill="#39D353" opacity="0.9">
   <animate attributeName="r" values="0;3.5" dur="0.5s" begin="0.25s" fill="freeze"/>
 </circle>
-<circle cx="116.8" cy="133.7" r="3.5" fill="#39D353" opacity="0.9">
+<circle cx="136.1" cy="157.1" r="3.5" fill="#39D353" opacity="0.9">
   <animate attributeName="r" values="0;3.5" dur="0.5s" begin="0.30s" fill="freeze"/>
 </circle>
-<text x="200.0" y="25.0" text-anchor="middle" fill="#cccccc" font-size="10">JavaScript</text>
-<text x="332.9" y="89.0" text-anchor="start" fill="#cccccc" font-size="10">TypeScript</text>
-<text x="365.7" y="237.8" text-anchor="start" fill="#cccccc" font-size="10">React</text>
-<text x="273.8" y="365.2" text-anchor="start" fill="#cccccc" font-size="10">Next.js</text>
-<text x="126.2" y="365.2" text-anchor="end" fill="#cccccc" font-size="10">Node.js</text>
-<text x="34.3" y="237.8" text-anchor="end" fill="#cccccc" font-size="10">HTML / CSS</text>
-<text x="67.1" y="89.0" text-anchor="end" fill="#cccccc" font-size="10">Git</text>
+<text x="200.0" y="72.5" text-anchor="middle" fill="#cccccc" font-size="10">JavaScript</text>
+<text x="305.3" y="121.2" text-anchor="start" fill="#cccccc" font-size="10">TypeScript</text>
+<text x="330.3" y="240.8" text-anchor="start" fill="#cccccc" font-size="10">React</text>
+<text x="260.2" y="338.7" text-anchor="start" fill="#cccccc" font-size="10">Next.js</text>
+<text x="139.8" y="338.7" text-anchor="end" fill="#cccccc" font-size="10">Node.js</text>
+<text x="69.7" y="240.8" text-anchor="end" fill="#cccccc" font-size="10">HTML / CSS</text>
+<text x="94.7" y="121.2" text-anchor="end" fill="#cccccc" font-size="10">Git</text>
 </svg>

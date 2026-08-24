@@ -96,9 +96,11 @@ def draw_radar_svg(axes, title="", theme="dark", accent="#39D353",
         print("Warning: Need at least 3 axes for a radar chart.")
         return ""
 
-    cx, cy = size / 2, size / 2
-    radius = size * 0.35
-    label_radius = radius + 30
+    # Use more padding for labels
+    padding = size * 0.18
+    cx, cy = size / 2, size / 2 + 8
+    radius = (size - padding * 2) * 0.42
+    label_radius = radius + 22
 
     # Theme colors
     if theme == "dark":
@@ -177,18 +179,26 @@ def draw_radar_svg(axes, title="", theme="dark", accent="#39D353",
         lx = cx + label_radius * math.cos(angle)
         ly = cy + label_radius * math.sin(angle)
 
-        # Anchor based on position
-        anchor = "middle"
-        if math.cos(angle) > 0.3:
-            anchor = "start"
-        elif math.cos(angle) < -0.3:
-            anchor = "end"
+        # Anchor and offset based on angle position
+        cos_a = math.cos(angle)
+        sin_a = math.sin(angle)
 
-        dy = 0
-        if math.sin(angle) > 0.3:
-            dy = 12
-        elif math.sin(angle) < -0.3:
-            dy = -5
+        if cos_a > 0.3:
+            anchor = "start"
+            dx = 4
+        elif cos_a < -0.3:
+            anchor = "end"
+            dx = -4
+        else:
+            anchor = "middle"
+            dx = 0
+
+        if sin_a > 0.3:
+            dy = 14
+        elif sin_a < -0.3:
+            dy = -6
+        else:
+            dy = 4
 
         label_text = axis["label"]
         if show_values:
@@ -203,7 +213,9 @@ def draw_radar_svg(axes, title="", theme="dark", accent="#39D353",
             else:
                 label_text += f" ({axis['value']})"
 
-        lines.append(f'<text x="{lx:.1f}" y="{ly + dy:.1f}" text-anchor="{anchor}" fill="{label_color}" font-size="10">{label_text}</text>')
+        # Use smaller font for long labels
+        fsize = 9 if len(label_text) > 14 else 10
+        lines.append(f'<text x="{lx + dx:.1f}" y="{ly + dy:.1f}" text-anchor="{anchor}" fill="{label_color}" font-size="{fsize}">{label_text}</text>')
 
     lines.append("</svg>")
     return "\n".join(lines)
