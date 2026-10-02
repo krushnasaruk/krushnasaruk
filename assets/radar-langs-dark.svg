@@ -36,7 +36,7 @@
 <circle cx="203.0" cy="166.4" r="3.5" fill="#39D353" stroke="#0d1117" stroke-width="1.5"/>
 <text x="220.0" y="43.2" text-anchor="middle" class="r-label">JavaScript <tspan class="r-val">(6.8M)</tspan></text>
 <text x="327.8" y="93.2" text-anchor="start" class="r-label">Python <tspan class="r-val">(2.8M)</tspan></text>
-<text x="353.5" y="213.1" text-anchor="start" class="r-label">TypeScript <tspan class="r-val">(1.2M)</tspan></text>
+<text x="353.5" y="213.1" text-anchor="start" class="r-label">TypeScript <tspan class="r-val">(1.3M)</tspan></text>
 <text x="281.6" y="311.6" text-anchor="start" class="r-label">Dart <tspan class="r-val">(208K)</tspan></text>
 <text x="158.4" y="311.6" text-anchor="end" class="r-label">Jupyter <tspan class="r-val">(105K)</tspan></text>
 <text x="86.5" y="213.1" text-anchor="end" class="r-label">C++ <tspan class="r-val">(26K)</tspan></text>
